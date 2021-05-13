@@ -15,11 +15,11 @@ class Produto {
     }
     validar () {
         if (typeof this.titulo !== 'string' || this.titulo.length === 0) {
-            throw new Error('O campo titulo está inválido')
+            throw new CampoInvalido('titulo')
         }
 
         if (typeof this.preco !== 'number' || this.preco === 0) {
-            throw new Error('O campo preço está inválido')
+            throw new CampoInvalido('preco')
         }
     }
 
