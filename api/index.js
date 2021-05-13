@@ -27,7 +27,10 @@ app.use((requisicao, resposta, proximo) => {
     resposta.setHeader('Content-Type', formatoRequisitado)
     proximo()
 })
-
+app.use((requisicao, resposta, proximo) => {
+    resposta.set('Access-Control-Allow-Origin', 'https://developer.mozilla.org')
+    proximo()
+})
 const roteador = require('./rotas/fornecedores')
 app.use('/api/fornecedores', roteador)
 
